@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Tech Test | View Order Entries</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let record of data; let i = index">
+    <ion-card-header>
+      <ion-card-title>Order No: {{ i + 1 }}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+            <ion-col><strong>Name</strong></ion-col>
+            <ion-col>{{ record.name }}</ion-col>
+        </ion-row>
+         <ion-row>
+            <ion-col><strong>Address:</strong></ion-col>
+            <ion-col>{{ record.address }}</ion-col>
+        </ion-row>
+         <ion-row>
+            <ion-col><strong>Item:</strong></ion-col>
+            <ion-col>{{ record.item }}</ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+    
+  </ion-card>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col><ion-button color="primary" expand="block" (click)=goBack()>Back</ion-button></ion-col>
+      <ion-col><ion-button color="danger" expand="block" (click)=deleteAll()>Delete All</ion-button></ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+</ion-content>
